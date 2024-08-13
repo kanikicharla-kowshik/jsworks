@@ -1,0 +1,451 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body{
+        padding: 0%;
+        margin: 0%;
+        background-color: white;
+    }
+    .main{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5%;
+    }
+    .box{
+        padding: 2%;
+        height: 450px;
+        width: 250px;
+        border: 2px solid lightslategray;
+        margin: 2%;
+    }
+    .box img{
+        width: 90%;
+        height: 250px;
+    }
+</style>
+
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="box">
+            <img src="" alt="">
+            <h2></h2>
+            <h1></h1>
+            <p></p>
+        </div>
+        
+    </div>
+
+    <script>
+        let cards = document.querySelectorAll(".box");
+
+        async function getData(){
+
+            let responce = await fetch("https://dummyjson.com/products/?limit=200&skip=136")
+            let data = await responce.json()
+            //console.log(data)
+
+            console.log(data.products)
+
+            cards.forEach((element,i)=>{
+                element.getElementsByTagName("img")[0].src=data.products[i].images[0];
+                element.getElementsByTagName("h2")[0].innerHTML=("Brand:"+data.products[i].brand);
+                element.getElementsByTagName("h1")[0].innerHTML=("Price:"+data.products[i].price);
+                element.getElementsByTagName("p")[0].innerHTML=data.products[i].description.slice(0,30);
+            })
+
+        }
+        getData()
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirts</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here */
+        .card {
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .cart {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .btn-checkout {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="number" id="min" placeholder="Enter Min price" />
+        <input type="number" id="max" placeholder="Enter Max price" />
+        <input type="button" value="Submit" class="SubBtn">
+    </form>
+    <div class="container">
+        <div class="row">
+
+            <!-- Product Card 1 -->
+            <div class="col-md-4">
+                <div class="card box" data-value="20">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/k/s/v/xl-hs-501-maroon-voroxy-original-imagtg66hmekvfyk.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                        <p class="card-text">$20.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 1', 20.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="25">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/shopsy-shirt/f/l/q/l-spc-hs-1301-pink-voroxy-original-imagscufwxbf2jmt.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image"> 
+                    <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                        <p class="card-text">$25.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 2', 25.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="35">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/n/r/o/m-formal-shirt-metronaut-original-imah2p9pg4vh6dk5.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                        <p class="card-text">$35.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 3', 35.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <!-- Product Card 1 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="40">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/i/2/j/m-hlss000540-highlander-original-imaggx963nvpzymx.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                        <p class="card-text">$40.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 1', 40.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="50">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/i/x/c/m-rs29h-front-98-lightgrey-mf-woostro-original-imagwfsygmzgwgrp.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                        <p class="card-text">$50.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 2', 50.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="55">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/l/p/f/m-mens-lw-lycra-t-shirt-sti-original-imahyyzsjhzefbyh.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                        <p class="card-text">$55.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 3', 55.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <!-- Product Card 1 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="60">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/u/1/v/s-mickey-3008-veirdo-original-imagztersutxahxw.jpeg?q=70&amp;crop=false 2x, https://rukminim2.flixcart.com/image/416/416/xif0q/t-shirt/u/1/v/s-mickey-3008-veirdo-original-imagztersutxahxw.jpeg?q=70&amp;crop=false 1x" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                        <p class="card-text">$60.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 1', 60.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="65">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/a/f/r/xxl-ausk0182-ausk-original-imagmffgt3vfzkrm.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                        <p class="card-text">$65.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 2', 65.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="70">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/5/b/x/xl-2384-s-hiphopfashion-original-imagx32dztakwvxp.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                        <p class="card-text">$70.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 3', 70.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <!-- Product Card 1 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="75">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/sweatshirt/d/v/z/s-2099-hip-hop-fashion-original-imagjhqgfguggzhk.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                        <p class="card-text">$75.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 1', 75.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="80">
+                    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/u/f/6/m-phsh000014-highlander-original-imagz7uftn77yhg9.jpeg?q=70&amp;crop=false" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                        <p class="card-text">$80.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 2', 80.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="col-md-4">
+                <div class="card box"data-value="90">
+                    <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/shirt/7/2/c/xxl-551-combraided-original-imagzk67cy5byhxs.jpeg?q=70&amp;crop=false" srcset="https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/7/2/c/xxl-551-combraided-original-imagzk67cy5byhxs.jpeg?q=70&amp;crop=false 2x, https://rukminim2.flixcart.com/image/416/416/xif0q/shirt/7/2/c/xxl-551-combraided-original-imagzk67cy5byhxs.jpeg?q=70&amp;crop=false 1x" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                        <p class="card-text">$90.00</p>
+                        <button class="btn btn-primary" onclick="addToCart('Product 3', 90.00)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Shopping Cart -->
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- <script>
+        // JavaScript functions for managing the shopping cart
+        var cart = [];
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            var cartItemsElement = document.getElementById("cartItems");
+            cartItemsElement.innerHTML = ""; // Clear previous items
+
+            cart.forEach(function (item) {
+                var cartItemElement = document.createElement("div");
+                cartItemElement.classList.add("cart-item");
+                cartItemElement.innerHTML = `
+                    <span>${item.name}</span>
+                    <span>$${item.price.toFixed(2)}</span>
+                `;
+                cartItemsElement.appendChild(cartItemElement);
+            });
+        }
+
+        function checkout() {
+            // Implement checkout logic here (e.g., navigate to a checkout page)
+            alert("Thank you for your purchase!");
+            // Optional: Clear the cart after checkout
+            cart = [];
+            updateCartDisplay();
+        }
+    </script> -->
+    <script>
+        let MyBtn = document.querySelector(".SubBtn");
+        let dataValue = document.querySelectorAll(".box");
+
+        dataValue.forEach(function(item){
+            //console.log(item);
+            MyBtn.addEventListener('click' , function(){
+                let x = document.getElementById("min").value;
+                let y = document.getElementById("max").value;
+
+                let xMin = parseInt(x);
+                let yMax = parseInt(y);
+
+                let DataItems = item.getAttribute('data-value');
+
+                if(DataItems >= xMin && DataItems <= yMax ){
+                    item.style.display="block"
+                }
+                else{
+                    item.style.display="none"
+                }
+            })
+        })
+    </script>
+
+</body>
+</html>

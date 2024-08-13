@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" id="min" placeholder="Enter Min value" />
+        <input type="number" id="max" placeholder="Enter Max value" />
+        <input type="button" value="Submit" class="SubBtn">
+    </form>
+    <div class="main">
+        <div class="box" data-value="500" >
+            <img src="https://static.toiimg.com/thumb/59632433/10-places-to-shop-till-you-drop-in-Bangalore.jpg?width=1200&height=900" width="500px" alt="">
+            <p >500</p>
+        </div>
+        
+        <p class="box" data-value="1000">1000</p>
+        <p class="box" data-value="200">200</p>
+        <p class="box" data-value="1800">1800</p>
+        <p class="box" data-value="750">750</p>
+        <p class="box" data-value="500">500</p>
+        <p class="box" data-value="600">600</p>
+        <p class="box" data-value="2000">2000</p>
+        <p class="box" data-value="1600">1600</p>
+    </div>
+
+    <script>
+        let MyBtn = document.querySelector(".SubBtn");
+        let dataValue = document.querySelectorAll(".box");
+
+        dataValue.forEach(function(item){
+            //console.log(item);
+            MyBtn.addEventListener('click' , function(){
+                let x = document.getElementById("min").value;
+                let y = document.getElementById("max").value;
+
+                let xMin = parseInt(x);
+                let yMax = parseInt(y);
+
+                let DataItems = item.getAttribute('data-value');
+
+                if(DataItems >= xMin && DataItems <= yMax ){
+                    item.style.display="block"
+                }
+                else{
+                    item.style.display="none"
+                }
+            })
+        })
+    </script>
+</body>
+</html>

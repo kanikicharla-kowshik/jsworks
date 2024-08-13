@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(238, 144, 224);
+            color: white;
+            
+        }
+        div{
+            text-align: center;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+     <div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <b>Account Holder Name:</b>K.V.S.N.Kowshik<br>
+        <b>Account Number:</b>567892134 <br>
+        <b>Mobile Number:</b>9849820102<br>
+        <b>Available Balance:</b>1000000<br></div>
+
+    <script>
+        document.getElementById("acc").addEventListener("click",()=>{
+        let pin = +prompt("Enter Pin")
+        if(pin == 7899){
+        location.href=("account.html")
+        }
+        else
+        alert("enter correct pin")
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: lightpink;
+        }
+        h1{
+            font-size: 300%;
+            line-height: 100px;
+            
+        }
+        .container{
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            padding: 100px;
+        }
+        .card{
+            text-align: center;
+            width: 25%;
+            margin: 3%;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .card-img-top{
+            width: 100%;
+            border-radius: 3px;
+        }
+        #button{
+            color:aliceblue;
+            width: 92%;
+            font-size: 100%;
+            padding: 10px;
+            margin-bottom: 10%;
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(153, 135, 235);
+            
+        }
+        #button:hover{
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            transition: ease-in-out 200ms;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+        <a href="transactions.html"><img src="https://img.freepik.com/free-vector/e-wallet-concept-illustration_114360-7691.jpg?t=st=1723216272~exp=1723219872~hmac=eabd53ab7aa9d26bf474631fc1e321f82dd4bb5f43eef74756251df22007f4d5&w=740" height="300px" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <a href="transactions.html"><br><button id="button">TRANSACTION</button></a>
+            </div>
+        </div>
+    
+        <div class="card">
+            <a href="shopping.html"><img src="https://img.freepik.com/premium-photo/happy-man-holding-shopping-bags-pestle-background_972478-5119.jpg" height= "300px" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <a href="shopping.html"><br><button id="button">SHOPPING</button></a>
+            </div>
+        </div>
+        <div class="card">
+            <a href="api.html"><img src="https://img.freepik.com/premium-photo/couple-walking-with-shopping-bags-city_7023-616100.jpg?w=996" height= "300px" class="card-img-top" alt="..."></a>
+            <div class="card-body">
+              <a href="api.html"><br><button id="button">API</button></a>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
